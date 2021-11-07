@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="JS/functions.js"></script>
+    <script defer src="JS/main.js"></script>
+    <link rel="stylesheet" href="SCSS/style.css">
+    <title>Battleships</title>
+</head>
+
+<body>
+    <div class="imageDiv"></div>
+    <!-- <div class="win"><h1></h1></div> -->
+    <main>
+        <div id="setupDiv">
+            <div id="game-size">
+                <div>
+                    <input type="radio" name="Game-Size" checked="checked" data-size="10">
+                    <label for="10">10X10</label>
+                </div>
+                <div>
+                    <input type="radio" name="Game-Size" data-size="11">
+                    <label for="10">11X11</label>
+                </div>
+                <div>
+                    <input type="radio" name="Game-Size" data-size="12">
+                    <label for="10">12X12</label>
+                </div>
+                <div>
+                    <input type="radio" name="Game-Size" data-size="13">
+                    <label for="10">13X13</label>
+                </div>
+                <div>
+                    <input type="radio" name="Game-Size" data-size="14">
+                    <label for="10">14X14</label>
+                </div>
+                <div>
+                    <input type="radio" name="Game-Size" data-size="15">
+                    <label for="10">15X15</label>
+                </div>
+            </div>
+            <div id="AmountSetup">
+                <h3>Battleships</h3>
+                <div>
+                    <p>Battleship size 2</p>
+                    <input type="number" class="SubType" min="0" max="4" value="0" date-shipsize="2">
+                </div>
+                <div>
+                    <p>Battleship size 3</p>
+                    <input type="number" class="SubType" min="0" max="3" value="0" date-shipsize="3">
+                </div>
+                <div>
+                    <p>Battleship size 4</p>
+                    <input type="number" class="SubType" min="0" max="2" value="0" date-shipsize="4">
+                </div>
+                <div>
+                    <p>Battleship size 5</p>
+                    <input type="number" class="SubType" min="0" max="2" value="0" date-shipsize="5">
+                </div>
+            </div>
+            <button>Start</button>
+        </div>
+        <div id="gameTable">
+        </div>
+        <div id="subTable">
+            <!-- <p>Remaining Battleships</p> -->
+            <table>
+                <tr>
+                    <td>Sub Type</td>
+                    <td>Sub Amount</td>
+                </tr>
+                <tr>
+                    <td>Sub-2</td>
+                    <td class="Sub-Info"></td>
+                </tr>
+                <tr>
+                    <td>Sub-3</td>
+                    <td class="Sub-Info"></td>
+                </tr>
+                <tr>
+                    <td>Sub-4</td>
+                    <td class="Sub-Info"></td>
+                </tr>
+                <tr>
+                    <td>Sub-5</td>
+                    <td class="Sub-Info"></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <audio id="audio-hit" src="./Audio/hit.wav"></audio>
+    <audio id="audio-sunk" src="./Audio/sunk.wav"></audio>
+    <audio id="audio-win" src="./Audio/win.wav"></audio>
+
+
+
+</body>
+
+</html>

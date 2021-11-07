@@ -1,0 +1,334 @@
+* {
+    font-family: 'Bangers', cursive;
+}
+html{
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    // background-color: #7CC3AD;
+    background-image: url("../images/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    font-size: 12px;
+
+    @media only screen and (min-width: 600px){
+        font-size: 16px;
+        
+    }
+    @media only screen and (min-width: 992px) {
+        font-size: 18px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        font-size: 20px;
+        
+    }
+
+    .imageDiv {
+        width: fit-content;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+
+        .boomImg {
+            animation: bigboomanm 2 0.7s alternate;
+            width: 0px;
+
+            @keyframes bigboomanm {
+                0% {
+                    width: 0px;
+                }
+
+                100% {
+                    width: 600px;
+                }
+            }
+        }
+
+        .winImg {
+            animation: bigboomanm 1 0.7s linear;
+            width: 800px;
+
+            @keyframes bigboomanm {
+                0% {
+                    width: 0px;
+                }
+
+                100% {
+                    width: 800px;
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 30vw 40vw 30vw;
+        justify-items: center;
+        align-items: center;
+
+        @media only screen and (max-width: 992px) {
+            grid-template-columns: unset;
+            grid-template-rows: 1fr 5fr 2fr;
+        }
+
+        &.winfade {
+            filter: grayscale(2);
+        }
+
+        #setupDiv {
+            font-size: 1em;
+            width: 50%;
+            padding: 1em;
+            filter: drop-shadow(-5px 10px 8px #266960);
+            text-align: center;
+            display: flex;
+            flex-flow: column;
+            background-color: #40B2A3;
+            border-radius: 20px;
+
+            @media only screen and (max-width: 992px) {
+                flex-flow: row wrap;
+                grid-row: 3;
+                width: 90%;
+                justify-content: center ;
+                padding: 1%;
+                margin: 0;
+                #game-size {
+                    
+                    div {
+                        flex-basis: 33% !important;
+                       
+
+                    }
+                }
+
+                button {
+                    // flex-basis: 100%;
+                    width: 20%;
+                }
+
+                h3 {
+                    flex-basis: 100%;
+                }
+
+                #AmountSetup {
+                    justify-content: center;
+                    flex-flow: row wrap !important;
+                }
+            }
+
+            #game-size {
+                display: flex;
+                flex-flow: row wrap;
+
+                div {
+                    flex-basis: 50%;
+                    font-size: 1.5em;
+                }
+            }
+
+            p,
+            h3 {
+                margin: 5px 0;
+                padding: 0;
+
+                // border: 1px solid black;
+            }
+
+            #AmountSetup {
+                display: flex;
+                flex-flow: column nowrap;
+
+                p {
+                    font-size: 1.5em;
+                    margin: 0 1em 0 0;
+                    padding: 0;
+                    // flex: 0 0 60%;
+                }
+
+                input {
+                    // margin-left: 1%;
+                    background-color: #85CCCA;
+                    font-size: 1em;
+                    width: 1.7em;
+                    text-align: center;
+                    outline: none;
+                    // border: none;
+                    border-radius: 10px;
+
+
+                    // flex: 0 0 10%
+                }
+
+                div {
+                    margin: 5px 0;
+                    display: flex;
+                    flex-flow: row;
+                }
+            }
+
+            button {
+
+                width: 50%;
+                padding: 2% 0;
+                font-size: 1.1em;
+                background-color: rgb(209, 76, 76);
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                box-shadow: inset 0px 0px 2px 2px #555;
+                margin: 5px auto;
+
+                &:hover {
+                    box-shadow: inset 0px 0px 5px 2px #555;
+
+                }
+
+                &:active {
+                    box-shadow: inset 0px 0px 10px 2px #555;
+
+                }
+            }
+
+        }
+
+        #gameTable {
+
+            display: flex;
+            justify-content: center;
+
+            @media only screen and (max-width: 600px) {
+                table {
+                        
+                    td {
+                        min-width: 1.3em;
+                        height: 1.3em;
+                        img{
+                            width:1.3em;
+                            animation: unset;
+                        }
+                    }
+                }
+            }
+
+            table {
+                table-layout: fixed;
+                border: 1px solid black;
+            }
+
+            td {
+                min-width: 2em;
+                height: 2em;
+                border: 1px solid rgb(151, 149, 149);
+                background-color: grey;
+                box-shadow: inset 0px 0px 2px 2px #555;
+                cursor: pointer;
+                text-align: center;
+
+                img {
+                    width: 2em;
+                    vertical-align: middle;
+                    animation: boomanm 5 0.7s alternate;
+
+                    @keyframes boomanm {
+                        0% {
+                            width: 0.5em;
+                        }
+
+                        100% {
+                            width: 2em;
+                        }
+
+                    }
+                }
+
+                &:hover {
+                    filter: brightness(80%);
+                }
+
+                &.sea {
+                    background-color: #85CCCA;
+                }
+
+                &.hit {
+                    background-color: #E27D5F;
+
+                }
+            }
+        }
+
+        #subTable {
+            filter: drop-shadow(-5px 10px 8px #266960);
+
+            @media only screen and (max-width: 992px) {
+                grid-row: 1;
+                
+                
+                table {
+                    width: 100%;
+                    
+
+                    tbody {
+                        display: flex;
+                        justify-content: center;
+                        flex-flow: row wrap;
+
+                        tr {
+                            &:first-child {
+                                display: none;
+                            }
+
+                            td {
+                                min-width: 1.5em;
+                                padding: 2px;
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+
+            table tbody {
+                font-size: 1.5em;
+
+                td {
+                    border-radius: 10px;
+                    padding: 2px 6px;
+                }
+
+                :nth-of-type(1) {
+                    background-color: rgb(209, 76, 76);
+
+                }
+
+                td {
+                    border: 1px solid black;
+                    text-align: center;
+                    height: 50px;
+                    transition: font-size 0.3s ease;
+                    font-size: 1em;
+
+                    &.minus {
+
+                        color: rgb(209, 76, 76);
+                        transition: font-size 0.3s ease;
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+    }
+}
